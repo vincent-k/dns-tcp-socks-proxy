@@ -209,6 +209,7 @@ int udp_listener() {
   if(bind(sock, (struct sockaddr*)&dns_listener, sizeof(dns_listener)) < 0)
     error("[!] Error binding on dns proxy");
 
+  /*
   FILE *resolv = fopen("/etc/resolv.conf", "w");
 
   if (!resolv)
@@ -216,6 +217,7 @@ int udp_listener() {
 
   fprintf(resolv, "nameserver %s\n", LISTEN_ADDR);
   fclose(resolv);
+  */
 
   if (strcmp(LOGFILE, "/dev/null") != 0) {
     LOG      = 1;
